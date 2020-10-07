@@ -4,7 +4,6 @@ on:
       - master
       - develop
 - name: Install dependencies for percy tests
-    working-directory: ./tests/
     run: npm install
 - name: Percy Test with master branch
     uses: percy/exec-action@v0.3.0
