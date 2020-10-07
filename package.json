@@ -1,0 +1,17 @@
+{
+    "name": "visual-automation-with-percyscript",
+    "author": "Juhi",
+    "version": "1.0.0",
+    "keywords": [],
+    "homepage": "https://github.com/juhi123/visual-automation-with-percyscript",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/juhi123/visual-automation-with-percyscript.git"
+    },
+    "description": "",
+    "contributors": [],
+    "dependencies": {},
+    "devDependencies": {
+        "@percy/script": "1.0.3"
+    }
+}

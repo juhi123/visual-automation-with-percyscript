@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - master
+      - develop
+- name: Install dependencies for percy tests
+    working-directory: ./tests/
+    run: npm install
+- name: Percy Test with master branch
+    uses: percy/exec-action@v0.3.0
+    if: github.ref == 'refs/heads/master'
+    with:
+      command: "node snapshot.js PERCY_BRANCH=master"
+      working-directory: ./tests/percy/tests
+      verbose: true
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+- name: Percy Test with develop branch
+    uses: percy/exec-action@v0.3.0
+    if: github.ref == 'refs/heads/develop'
+    with:
+      command: "node snapshot.js PERCY_BRANCH=develop PERCY_TARGET_BRANCH=master"
+      working-directory: ./tests/percy/tests
+      verbose: true
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
