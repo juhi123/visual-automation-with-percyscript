@@ -3,10 +3,10 @@ const PercyScript = require('@percy/script');
 let URL= "";
 
 if (process.env.PERCY_BRANCH === 'master') {
-  URL = "https://sevencoloursblog.wordpress.com/"
+  URL = "https://sevencoloursblog.wordpress.com/" //Prod URL
 }
 else {
-  URL = "https://sevencoloursblog.wordpress.com/"
+  URL = "https://sevencoloursblog.wordpress.com/" //Dev URL
 }
 
 //Home Page Test
