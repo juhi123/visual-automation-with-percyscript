@@ -11,7 +11,7 @@ on:
     if: github.ref == 'refs/heads/master'
     with:
       command: "node snapshot.js PERCY_BRANCH=master"
-      working-directory: ./tests/percy/tests
+      working-directory: ./percy-tests
       verbose: true
     env:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
@@ -20,7 +20,7 @@ on:
     if: github.ref == 'refs/heads/develop'
     with:
       command: "node snapshot.js PERCY_BRANCH=develop PERCY_TARGET_BRANCH=master"
-      working-directory: ./tests/percy/tests
+      working-directory: ./percy-tests
       verbose: true
     env:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
